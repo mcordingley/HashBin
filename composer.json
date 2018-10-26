@@ -24,5 +24,9 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^7.4"
+    },
+    "suggest": {
+        "paragonie/sodium_compat": "Enables use of Sip24 hasher on PHP versions older than 7.2.",
+        "ext-sodium": "Enables use of Sip24 hasher on PHP versions older than 7.2."
     }
 }
