@@ -8,7 +8,6 @@ use mcordingley\HashBin\Hashers\Native;
 
 final class HashBin
 {
-    private $binners = [];
     private $binStrategy;
     private $hasher;
 
@@ -23,12 +22,28 @@ final class HashBin
         return new static(new Native('sha256', new Unpack), new Modulo);
     }
 
-    public function binner(string $seed): Binner
+    /**
+     * Calculates a consistent bin between zero and $max, inclusive.
+     *
+     * @param string seed
+     * @param int $max
+     * @return int
+     */
+    public function bin(string $seed, int $max): int
     {
-        if (!isset($this->binners[$seed])) {
-            $this->binners[$seed] = new Binner($this->hasher->hash($seed), $this->binStrategy);
-        }
+        return $this->binRange($seed, 0, $max);
+    }
 
-        return $this->binners[$seed];
+    /**
+     * Calculates a consistent bin between $min and $max, inclusive.
+     *
+     * @param string seed
+     * @param int $min
+     * @param int $max
+     * @return int
+     */
+    public function binRange(string $seed, int $min, int $max): int
+    {
+        return $this->binStrategy->bin($this->hasher->hash($seed), $min, $max);
     }
 }
