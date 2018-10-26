@@ -24,6 +24,6 @@ final class HashBinTest extends TestCase
         $hashBin = HashBin::make();
         $binner = $hashBin->binner('test');
 
-        static::assertEquals($binner, $hashBin->binner('test'));
+        static::assertTrue($binner === $hashBin->binner('test'));
     }
 }
