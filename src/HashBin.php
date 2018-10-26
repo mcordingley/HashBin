@@ -3,8 +3,7 @@
 namespace mcordingley\HashBin;
 
 use mcordingley\HashBin\BinStrategies\Modulo;
-use mcordingley\HashBin\Hashers\IntegerInterpreters\Unpack;
-use mcordingley\HashBin\Hashers\Native;
+use mcordingley\HashBin\Hashers\CRC32;
 
 final class HashBin
 {
@@ -19,7 +18,7 @@ final class HashBin
 
     public static function make(): self
     {
-        return new static(new Native('sha256', new Unpack), new Modulo);
+        return new static(new CRC32, new Modulo);
     }
 
     /**
