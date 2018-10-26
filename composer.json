@@ -1,0 +1,28 @@
+{
+    "name": "mcordingley/hash-bin",
+    "description": "A small helper to bin your things.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Michael Cordingley",
+            "email": "Michael.Cordingley@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "mcordingley\\HashBin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "mcordingley\\HashBinTests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    }
+}
