@@ -9,6 +9,13 @@ integer from some value that remains consistent across calls. PHP has access to 
 outputs are nearly always strings. This wraps those hash functions and some additional logic into a simple
 object-oriented interface.
 
+
+## Installation
+
+`composer require mcordingley/hash-bin`
+
+## Usage
+
 ```
 use mcordingley\HashBin\BinStrategies\Modulo;
 use mcordingley\HashBin\HashBin;
