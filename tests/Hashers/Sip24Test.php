@@ -21,6 +21,10 @@ final class Sip24Test extends TestCase
 
     public function testBadKey()
     {
+        if (!defined('SODIUM_CRYPTO_SHORTHASH_KEYBYTES')) {
+            static::markTestSkipped('Must have PHP 7.2+ or ext-sodium installed.');
+        }
+
         static::expectException(\InvalidArgumentException::class);
 
         new Sip24('123', new Unpack);
