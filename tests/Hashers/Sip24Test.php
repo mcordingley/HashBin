@@ -18,4 +18,11 @@ final class Sip24Test extends TestCase
 
         static::assertTrue(is_int($hasher->hash('test')));
     }
+
+    public function testBadKey()
+    {
+        static::expectException(\InvalidArgumentException::class);
+
+        new Sip24('123', new Unpack);
+    }
 }
