@@ -6,7 +6,7 @@ use mcordingley\HashBin\BinStrategy;
 
 /**
  * Uses the modulo operation to constrain the passed code to the desired range. This will make lower numbers more likely
- * to be ouput than higher ones, but the effect should be small given a large potential input range.
+ * to be output than higher ones, but the effect should be small given a large potential input range.
  */
 final class Modulo implements BinStrategy
 {
