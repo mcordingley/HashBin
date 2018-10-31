@@ -9,7 +9,7 @@ final class HashBinTest extends TestCase
 {
     public function testHashBin()
     {
-        $hashBin = HashBin::make();
+        $hashBin = HashBin::make()->setBase('foo');
 
         for ($i = 0; $i < 1000; $i++) {
             static::assertGreaterThanOrEqual(0, $hashBin->bin($i, 10));
