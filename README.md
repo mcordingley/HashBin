@@ -63,7 +63,7 @@ no arguments. This hasher should be your default choice.
 
 If you require some cryptographic hardening against potential collisions, use `Sip24`. This hasher requires libsodium to
 be present, either via PHP 7.2 or newer or through having the `sodium_compat` library installed. It uses SipHash-2-4 to
-calculated its hashes, which is a keyed hash function that works well with short inputs. Its constructor takes a secret
+calculate its hashes. SipHash is a keyed hash function that works well with short inputs. Its constructor takes a secret
 key `SODIUM_CRYPTO_SHORTHASH_KEYBYTES` long and an integer interpreter. The key should be a raw binary string that
 persists between uses of this library. Ideally, the key should be generated with the `random_bytes` method:
 `random_bytes(SODIUM_CRYPTO_SHORTHASH_KEYBYTES)`. Store the key encoded in hexadecimal (`bin2hex`) or base64 (`base64_encode`)
