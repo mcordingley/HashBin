@@ -28,6 +28,6 @@
     },
     "suggest": {
         "paragonie/sodium_compat": "Enables use of Sip24 hasher on PHP versions older than 7.2.",
-        "ext-sodium": "Enables use of Sip24 hasher on PHP versions older than 7.2."
+        "ext-sodium": "Greatly speeds up the operation of sodium_compat."
     }
 }
