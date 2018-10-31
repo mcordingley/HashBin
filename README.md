@@ -50,7 +50,7 @@ of outputs.
 The `HashBin` constructor takes two arguments, a `Hasher` and a `BinStrategy`. The `Hasher` is responsible for converting
 supplied strings into integer values. `BinStrategy` then takes that integer and constrains it to the specified range.
 
-### IntegerInterpreters
+### Integer Interpreters
 
 Integer interpreters are used by some hashers to convert binary strings into integers. `Unpack` is the only supplied
 interpreter and takes no arguments in its constructor.
