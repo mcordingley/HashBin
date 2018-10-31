@@ -11,9 +11,11 @@ final class MultiplyTest extends TestCase
     {
         $binStrategy = new Multiply;
 
-        for ($i = 0; $i < 1000; $i++) {
-            static::assertGreaterThanOrEqual(-10, $binStrategy->bin($i, -10, 15));
-            static::assertLessThanOrEqual(15, $binStrategy->bin($i, -10, 15));
+        for ($i = -1000; $i < 1000; $i++) {
+            $bin = $binStrategy->bin($i, -10, 15);
+
+            static::assertGreaterThanOrEqual(-10, $bin);
+            static::assertLessThanOrEqual(15, $bin);
         }
     }
 }
